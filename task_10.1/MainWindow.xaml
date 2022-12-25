@@ -1,0 +1,52 @@
+﻿<Window x:Class="task_10._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:task_10._1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Button 
+            x:Name="button"
+            Content="Внести изменения" 
+            Margin="631,200,38.6,191"
+            Click="Button_Click"/>
+        <ListView x:Name="usersList"
+                  Margin="0,0,199.6,0"
+                  SelectionChanged ="UsersList_ItemActivate"
+                  SelectionMode="Single"
+                  >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Number}" Width="20">№</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Surname}" Width="100">Фамилия</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="100">Имя</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Patronymic}" Width="100">Отчество</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PhoneNumber}" Width="100">Номер телефона</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PassportSeries}" Width="50">Серия</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PassportNumber}" Width="120">Номер паспорта</GridViewColumn>
+                </GridView>
+            </ListView.View>
+
+
+        </ListView>
+        <TextBox 
+            x:Name="textBox1"
+            HorizontalAlignment="Left" 
+            Height="30"
+            Margin="612,152,0,0" 
+            
+            TextWrapping="Wrap"
+            Text="" 
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            VerticalAlignment="Top"
+            Width="164"
+            IsEnabled="False"
+            TextChanged="textBox1_TextChanged"/>
+
+
+    </Grid>
+</Window>
